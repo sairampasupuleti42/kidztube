@@ -27,21 +27,28 @@ import { MyVideosComponent } from './modules/user/components/account/my-videos/m
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { AdminLoginComponent } from './modules/administrator/components/admin-login/admin-login.component';
+import { AdminProfileComponent } from './modules/administrator/components/admin-profile/admin-profile.component';
+import { AdminVideosComponent } from './modules/administrator/components/admin-videos/admin-videos.component';
+import { AdminVideoUploadComponent } from './modules/administrator/components/admin-video-upload/admin-video-upload.component';
+import { AdminVideoCategoriesComponent } from './modules/administrator/components/admin-video-categories/admin-video-categories.component';
+import { DashboardLayoutComponent } from './modules/administrator/components/dashboard-layout/dashboard-layout.component';
+import { AdminVideosListComponent } from './modules/administrator/components/admin-videos-list/admin-videos-list.component';
+import { FormsModule, ReactiveFormsModule } from '../../node_modules/@angular/forms';
+const config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider('690469461844-b2gv3bv0kh2dod1b88cbt0ag8dqic9d2.apps.googleusercontent.com')
+  },
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider('192950101526760')
+  }
+]);
 
- const config = new AuthServiceConfig([
-   {
-     id: GoogleLoginProvider.PROVIDER_ID,
-     provider: new GoogleLoginProvider('690469461844-b2gv3bv0kh2dod1b88cbt0ag8dqic9d2.apps.googleusercontent.com')
-   },
-   {
-     id: FacebookLoginProvider.PROVIDER_ID,
-     provider: new FacebookLoginProvider('192950101526760')
-   }
- ]);
-
- export function provideConfig() {
-   return config;
- }
+export function provideConfig() {
+  return config;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,12 +67,22 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
     DashboardComponent,
     ArticleComponent,
     FilterPipe,
-    MyVideosComponent
+    MyVideosComponent,
+    AdminLoginComponent,
+    AdminProfileComponent,
+    AdminVideosComponent,
+    AdminVideoUploadComponent,
+    AdminVideoCategoriesComponent,
+    AdminVideosListComponent,
+    DashboardLayoutComponent
   ],
   imports: [
     BrowserModule,
-     SocialLoginModule,
+    SocialLoginModule,
     HttpClientModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     Ng2CarouselamosModule,
     RouterModule.forRoot([
       {
@@ -92,6 +109,43 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
         path: 'my-videos',
         component: MyVideosComponent,
         canActivate: [AuthGuard]
+      }, {
+        path: 'login',
+        component: AdminLoginComponent
+      }, {
+        path: 'admin',
+        redirectTo: 'dashboard',
+        pathMatch: 'full'
+      }, {
+        path: 'dashboard',
+        component: DashboardLayoutComponent,
+        children: [
+          {
+            path: '',
+            component: DashboardComponent
+          }, {
+            path: 'category',
+            component: AdminVideoCategoriesComponent
+          }, {
+            path: 'videos',
+            component: AdminVideosComponent,
+            children: [
+              {
+                path: '',
+                redirectTo: 'list',
+                pathMatch: 'full'
+              },
+              {
+                path: 'list',
+                component: AdminVideosListComponent
+              },
+              {
+                path: 'add',
+                component: AdminVideoUploadComponent
+              }
+            ]
+          }
+        ]
       },
       {
         path: ':id',

@@ -1,0 +1,7 @@
+.form-control{
+border:1px solid #ced4da !important;
+border-radius:0;
+height: calc(2.25rem + 2px);
+font-size:13px;
+margin-bottom:0 !important;
+}
