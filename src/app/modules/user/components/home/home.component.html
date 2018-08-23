@@ -1,0 +1,170 @@
+<div id="fixed-bg">
+    <div class="main-container">
+        <div class="container-fluid bg-main p-3">
+            <div class="row ">
+                <div class="col-md-9">
+
+                    <div class="clearfix"></div>
+                    <div class=" ">
+                        <h3 class="category-head pt-4"> Top Viewd </h3>
+                        <div class="row pb-4">
+                            <div class="col-md-3" *ngFor="let video of topViewd;let i=index">
+                                <div class="card cat">
+                                    <a class="badge badge-primary-left"> {{video.uploaded_on}}</a>
+                                    <span class="badge badge-primary">{{video.duration}}</span>
+                                    <a href="#">
+                                        <img [src]="video.thumb" class="img-fluid" alt="{{video.title}}">
+                                    </a>
+                                    <div class="overlay">
+                                        <div class="text">
+                                            <a href="#" [routerLink]="['/',video.category, video.permalink]">
+                                                <i class="fa fa-play mr-2"></i> Watch Video</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-2 card-cat-bottom">
+                                    <a href="#" class="float-right font-light-dark">
+                                        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                    </a>
+                                    <p class="font-light-dark">{{video.title+' '+(i+1)}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <div class="w-100 pb-3">
+                            <img src="/assets/images/ads/ad-h-2.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="clearfix"></div>
+                        <h3 class="category-head"> Music
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="musicVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <h3 class="category-head"> Funny
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="funnyVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <h3 class="category-head"> Rhymes
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="rhymesVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <h3 class="category-head"> Telugu Drama
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="dramaVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+
+                        <div class="border-hr"></div>
+                        <div class="clearfix"></div>
+                        <h3 class="category-head"> Sports
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="sportsVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <div class="clearfix"></div>
+                        <h3 class="category-head"> Cartoons
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="cartoonVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                            <ng-template #prev>
+                                <i class="fa fa-chevron-left"></i>
+                            </ng-template>
+                            <ng-template #next>
+                                <i class="fa fa-chevron-right"></i>
+                            </ng-template>
+                            <ng-template #item let-item let-i="index">
+                                <div class="items">
+                                    <a [routerLink]="['/',item.category,item.permalink]">
+                                        <div class="card cat">
+                                            <a class="badge badge-primary-left"> {{item.uploaded_on}}</a>
+                                            <span class="badge badge-primary">{{item.duration}}</span>
+                                            <a href="#">
+                                                <img [src]="item.thumb" alt="{{item.title}}" class="_item" onerror="this.src='/assets/saranam-logo.jpg'" />
+                                            </a>
+                                            <div class="overlay">
+                                                <div class="text">
+                                                    <a href="#" [routerLink]="['/',item.category, item.permalink]">
+                                                        <i class="fa fa-play mr-2"></i> Watch Video</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="py-2 card-cat-bottom">
+                                            <a href="#" class="float-right font-light-dark">
+                                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                            </a>
+                                            <p class="font-light-dark">{{item.title+' '+(i+1)}}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </ng-template>
+                        </div>
+                        <div class="w-100 py-3">
+                            <a href="#">
+                                <img src="/assets/images/ads/ad-h-2.png" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="border-hr"></div>
+                        <div class="clearfix"></div>
+                        <h3 class="category-head"> Dance
+                            <a href="#">
+                                <span class="text-success p">View All</span>
+                            </a>
+                        </h3>
+                        <div class="row pb-4">
+                            <div class="slides-wrapper" ng2-carouselamos [items]="danceVideos" [width]="1000" [$prev]="prev" [$next]="next" [$item]="item">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+
+
+                <div class="col-md-3">
+                    <app-sideabar></app-sideabar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

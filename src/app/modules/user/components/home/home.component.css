@@ -1,0 +1,15 @@
+.items {
+    max-width: 253px;
+    height: 187px;
+    padding: 0 15px;
+}
+
+.card.cat img {
+    width: 222px;
+    height: 144px;
+}
+
+i.fa.fa-chevron-right,
+i.fa.fa-chevron-left {
+    color: #fff;
+}

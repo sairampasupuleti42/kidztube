@@ -1,0 +1,230 @@
+<div class="main-container">
+    <div class="container-fluid">
+        <div class="row sm-flex-row-reverse">
+            <div class="col-md-3">
+                <app-sideabar></app-sideabar>
+            </div>
+            <div class="col-md-9">
+                <div class="bg-main p-3">
+                    <div class="main-menu">
+                        <div class="col-md-12">
+                            <ul class="main-category-menu">
+                                <li class="color-1">
+                                    <a href="#">
+                                        <i class="fa fa-music"></i>Music</a>
+                                </li>
+                                <li class="color-2">
+                                    <a href="#">
+                                        <i class="fa fa-soccer-ball-o"></i>Sports</a>
+                                </li>
+                                <li class="color-3">
+                                    <a href="#">
+                                        <i class="fa fa-gamepad"></i>Gaming</a>
+                                </li>
+                                <li class="color-4">
+                                    <a href="#">
+                                        <i class="fa fa-globe"></i>News</a>
+                                </li>
+                                <li class="color-1">
+                                    <a href="#">
+                                        <i class="fa fa-play-circle-o"></i>Live</a>
+                                </li>
+                                <li class="color-2">
+                                    <a href="#">
+                                        <i class="fa fa-repeat"></i>360° Video</a>
+                                </li>
+                                <li class="color-4">
+                                    <a href="#">
+                                        <i class="fa fa-globe"></i>News</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-8">
+
+                            <div class="video-card bg-white" id="watch">
+                                <p class="text-dark font-weight-bold">LOREM LPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING</p>
+                                <hr>
+                                <video width="100%" height="418" controls>
+                                    <source src="assets/video/video1.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                                </video>
+                                <div class="clearfix"></div>
+                                <div class="description">
+                                    <h4>{{articleVideo.video_title}}</h4>
+                                    <p class="font-light-dark small font-weight-bold"> <span> {{articleVideo.views}} </span> views . Uploaded By <span>  {{articleVideo.uploaded_by}}  </span></p>
+                                    <dl>
+                                        <dt class="mb-2">Description</dt>
+                                        <dd class="font-light-dark small font-weight-bold"> {{articleVideo.video_description}}</dd>
+
+                                    </dl>
+                                </div>
+                                <div class="video-share">
+
+                                    <ul class="social_link">
+                                        <li>
+                                            <a class="facebook" href="#">
+                                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="youtube" href="#">
+                                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="linkedin" href="#">
+                                                <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="google" href="#">
+                                                <i class="fa fa-google-plus" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="twitter" href="#">
+                                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="rss" href="#">
+                                                <i class="fa fa-rss" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="like">
+                                        <li>
+                                            <a class="deslike" href="#">{{articleVideo.dislikes}}
+                                                <i class="fa fa-thumbs-down"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="like" href="#">{{articleVideo.likes}}
+                                                <i class="fa fa-thumbs-up"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- // Social -->
+                                </div>
+                                <div class="clearfix"></div>
+
+                                <div id="comments" class="post-comments">
+                                    <h3 class="post-box-title">
+                                        <span>19</span> Comments</h3>
+                                    <ul class="comments-list">
+                                        <li>
+                                            <div class="post_author">
+                                                <div class="img_in">
+                                                    <a href="#">
+                                                        <img src="assets/images//article/c1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="author-name">Rabie Elkheir</a>
+                                                <time datetime="2017-03-24T18:18">July 27, 2014 - 11:00 PM</time>
+                                            </div>
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+                                            <a href="#" class="reply">Reply</a>
+
+                                            <ul class="children">
+                                                <li>
+                                                    <div class="post_author">
+                                                        <div class="img_in">
+                                                            <a href="#">
+                                                                <img src="assets/images//article/c1.jpg" alt="">
+                                                            </a>
+                                                        </div>
+                                                        <a href="#" class="author-name">Salam Ahmmed</a>
+                                                        <time datetime="2017-03-24T18:18">July 27, 2014 - 11:00 PM</time>
+                                                    </div>
+                                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+                                                    <a href="#" class="reply">Reply</a>
+                                                </li>
+                                            </ul>
+
+
+                                        </li>
+                                        <li>
+                                            <div class="post_author">
+                                                <div class="img_in">
+                                                    <a href="#">
+                                                        <img src="assets/images//article/c1.jpg" alt="">
+                                                    </a>
+                                                </div>
+                                                <a href="#" class="author-name">Salam Ahmmed</a>
+                                                <time datetime="2017-03-24T18:18">July 27, 2014 - 11:00 PM</time>
+                                            </div>
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum</p>
+                                            <a href="#" class="reply">Reply</a>
+                                        </li>
+
+                                    </ul>
+
+
+                                    <h3 class="post-box-title">Add Comments</h3>
+                                    <form>
+                                        <input type="text" class="form-control" id="Name" placeholder="YOUR NAME">
+                                        <input type="email" class="form-control" id="Email" placeholder="EMAIL">
+                                        <input type="text" class="form-control" placeholder="WEBSITE">
+                                        <textarea class="form-control " rows="5" id="Message" placeholder="COMMENT"></textarea>
+                                        <button type="button" id="contact_submit" class="btn btn-dm ">Post Comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="related-posts" *ngIf="relatedVideos">
+                                <!-- video item -->
+                                <p class="text-dark"> Related Videos</p>
+                                <hr>
+                                <div class="related-video-item" *ngFor="let currentVideo of relatedVideos;let i=index;">
+                                    <div class="thumb">
+                                        <small class="time">{{currentVideo.duration}}</small>
+                                        <a href="#" [routerLink]="['/',currentVideo.category,currentVideo.permalink]">
+                                            <img [src]="currentVideo.thumb" alt="{{currentVideo.title}}">
+                                        </a>
+                                    </div>
+                                    <a href="#" [routerLink]="['/',currentVideo.category,currentVideo.permalink]" class="title">{{currentVideo.title}}</a>
+                                    <a class="channel-name" href="#">{{currentVideo.category_name}}
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="clearfix"></div>
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                            <div id="related-posts" *ngIf="relatedVideos">
+
+                                <!-- video item -->
+                                <p class="text-dark"> Trending Videos</p>
+                                <hr>
+                                <div class="related-video-item" *ngFor="let currentVideo of relatedVideos">
+                                    <div class="thumb">
+                                        <small class="time">{{currentVideo.duration}}</small>
+                                        <a href="#">
+                                            <img src="{{currentVideo.thumb}}" alt="">
+                                        </a>
+                                    </div>
+                                    <a href="#" class="title">{{currentVideo.title}}</a>
+                                    <a class="channel-name" href="#">{{currentVideo.category_name}}
+                                        <span>
+                                            <i class="fa fa-check-circle"></i>
+                                        </span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-center  py-5">
+        <div class="btn-group  py-5">
+          <a class="btn btn-primary mr-1" [routerLink]="['signin']">
+            <i class="fa fa-unlock-alt" aria-hidden="true"></i> Sign In</a>
+          <a class="btn btn-success" [routerLink]="['signup']">
+            <i class="fa fa-user-o" aria-hidden="true"></i> Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-md-6">
+      <div class="col-md-8 offset-2">
+        <h3>Try with ?</h3>
+        <ul class="list-group py-5 mt-5">
+          <li class="list-group-item mb-1">
+            <button class="btn facebook" (click)="signInWithFB()">
+              <i class="fa fa-facebook"></i>
+              Continue with facebook
+            </button>
+          </li>
+          <li class="list-group-item mb-1">
+            <button class="btn btn-outline-danger" (click)="signInWithGoogle()">
+              <i class="fa fa-google-plus"></i>
+              Continue with Google
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
